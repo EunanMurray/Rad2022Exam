@@ -22,7 +22,7 @@ namespace Rad2021ConsoleApp.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ShareBalance = table.Column<double>(type: "float", nullable: false),
+                    ShareBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     LoanID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -60,13 +60,13 @@ namespace Rad2021ConsoleApp.Migrations
                 columns: new[] { "MemberID", "Address", "LoanID", "Name", "Phone", "ShareBalance" },
                 values: new object[,]
                 {
-                    { 1, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 200.0 },
-                    { 2, "Garden House Crowther Way, Dublin 20", 0, "Catherine Autier Miconi", "(01)-62634562", 400.0 },
-                    { 3, "1900 Oak St., Dublin 4", 0, "Thomas Axen", "(01)-89377483", 2000.0 },
-                    { 4, "8 Johnston Road, Dublin", 0, "John B. Aird", "(01)-12345322", 800.0 },
-                    { 5, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 600.0 },
-                    { 6, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 3000.0 },
-                    { 7, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 5000.0 }
+                    { 1, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 200.00m },
+                    { 2, "Garden House Crowther Way, Dublin 20", 0, "Catherine Autier Miconi", "(01)-62634562", 400.00m },
+                    { 3, "1900 Oak St., Dublin 4", 0, "Thomas Axen", "(01)-89377483", 2000.00m },
+                    { 4, "8 Johnston Road, Dublin", 0, "John B. Aird", "(01)-12345322", 800.00m },
+                    { 5, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 600.00m },
+                    { 6, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 3000.00m },
+                    { 7, "8 Johnston Road, Dublin", 0, "Elizabeth Anderson", "(01)-12345322", 5000.00m }
                 });
 
             migrationBuilder.InsertData(

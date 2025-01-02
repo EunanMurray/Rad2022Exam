@@ -12,8 +12,7 @@ namespace Rad2021ClassLibrary.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-
-        public double ShareBalance { get; set; }
+        public decimal ShareBalance { get; set; }
         public int LoanID { get; set; }
         public virtual ICollection<Loans> Loan { get; set; }
     }

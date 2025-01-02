@@ -12,7 +12,7 @@ using Rad2021ConsoleApp.Data;
 namespace Rad2021ConsoleApp.Migrations
 {
     [DbContext(typeof(Rad2022Context))]
-    [Migration("20250102210813_IntialCreate")]
+    [Migration("20250102214127_IntialCreate")]
     partial class IntialCreate
     {
         /// <inheritdoc />
@@ -146,8 +146,8 @@ namespace Rad2021ConsoleApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("ShareBalance")
-                        .HasColumnType("float");
+                    b.Property<decimal>("ShareBalance")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("MemberID");
 
@@ -161,7 +161,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "Elizabeth Anderson",
                             Phone = "(01)-12345322",
-                            ShareBalance = 200.0
+                            ShareBalance = 200.00m
                         },
                         new
                         {
@@ -170,7 +170,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "Catherine Autier Miconi",
                             Phone = "(01)-62634562",
-                            ShareBalance = 400.0
+                            ShareBalance = 400.00m
                         },
                         new
                         {
@@ -179,7 +179,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "Thomas Axen",
                             Phone = "(01)-89377483",
-                            ShareBalance = 2000.0
+                            ShareBalance = 2000.00m
                         },
                         new
                         {
@@ -188,7 +188,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "John B. Aird",
                             Phone = "(01)-12345322",
-                            ShareBalance = 800.0
+                            ShareBalance = 800.00m
                         },
                         new
                         {
@@ -197,7 +197,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "Elizabeth Anderson",
                             Phone = "(01)-12345322",
-                            ShareBalance = 600.0
+                            ShareBalance = 600.00m
                         },
                         new
                         {
@@ -206,7 +206,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "Elizabeth Anderson",
                             Phone = "(01)-12345322",
-                            ShareBalance = 3000.0
+                            ShareBalance = 3000.00m
                         },
                         new
                         {
@@ -215,7 +215,7 @@ namespace Rad2021ConsoleApp.Migrations
                             LoanID = 0,
                             Name = "Elizabeth Anderson",
                             Phone = "(01)-12345322",
-                            ShareBalance = 5000.0
+                            ShareBalance = 5000.00m
                         });
                 });
 

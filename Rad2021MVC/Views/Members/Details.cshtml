@@ -1,0 +1,57 @@
+﻿@model Rad2021ClassLibrary.Models.Members
+
+@{
+    ViewData["Title"] = "Loan History";
+}
+
+<h1>Loan History for @Model.Name</h1>
+
+<div>
+    <h4>Member Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShareBalance)
+        </dt>
+        <dd class="col-sm-10">
+            €@Html.DisplayFor(model => model.ShareBalance)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Loan History</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Application Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Approved By</th>
+                <th>Repaid</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loan in Model.Loan)
+            {
+                <tr>
+                    <td>@loan.ApplicationDate.ToShortDateString()</td>
+                    <td>€@loan.LoanAmount.ToString("F2")</td>
+                    <td>@(loan.Approved ? "Approved" : "Not Approved")</td>
+                    <td>@loan.ApprovedBy</td>
+                    <td>@(loan.RepaidInFull ? "Yes" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
